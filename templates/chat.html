@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>DashBoard</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>
+    
+</head>
+<body>
+
+<div class="main--content">
+    
+    <!----------------------- Header ----------------------->
+
+    <div class="header--wrapper">
+        <div class="header--title">
+            <span>Daraz Statistics</span>
+            <h2>DashBoard</h2>
+        </div>
+        <img src="../static/daraz2.png" alt="daraz-logo"/>
+    </div>
+
+    <div class="aboutus-content">
+        <h1>Daraz Mobile Statistics</h1>
+        <p>Welcome to our data-driven haven! We're thrilled to have you here, your go-to destination for insightful statistics and instant answers..</p>
+    </div>
+
+    <!----------------------- Header ----------------------->
+
+    <!----------------------- Card ----------------------->
+
+    <div class="cards">
+
+                <div class="card-single">
+                    <div>
+                        <!-- <h1>54</h1> -->
+                        <h1>{{ total_listing }}</h1>
+                        <span>Total Listings</span>
+                    </div>
+                    <div>
+                        <span class="las la-clipboard-list"></span>
+                    </div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>{{questions}}</h1>
+                        <span>Total Questions Asked</span>
+                    </div>
+                    <div>
+                        <span class="las la-users"></span>
+                    </div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>{{rating}}</h1>
+                        <span>Average Rating</span>
+                    </div>
+                    <div>
+                        <span class="las la-star-half-alt"></span>                        
+                    </div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>{{reviews}}</h1>
+                        <span>Average Reviews </span>
+                    </div>
+                    <div>
+                        <span class="las la-shopping-bag"></span>
+                    </div>
+                </div>
+
+                <div class="card-single">
+                    <div>
+                        <h1>${{price}}</h1>
+                        <span>Average Price</span>
+                    </div>
+                    <div>
+                        <!-- <span class="lab la-google-wallet"></span> -->
+                    </div>
+                </div>
+
+    </div>
+
+    <!----------------------- Header ----------------------->
+
+    <!----------------------- Top 5 table ----------------------->
+
+    <div class="course-header">
+        <h1>Top 5 Products</h1>
+    </div>
+
+    <div class="tablebox">
+
+            <div class="tablerow table-head">
+                <div class="tablecell">
+                    <h5>Product</h5>
+                </div>
+                
+                <div class="tablecell">
+                    <h5>Rating</h5>
+                </div>
+                
+                <div class="tablecell">
+                    <h5>Price</h5>
+                </div>
+            
+            </div>
+            
+            <div class="tablerow">
+                <div class="tablecell">
+                    <a href="{{products_list[0][3]}}">
+                        <h6>${{ products_list[0][0] }}</h6>
+                    </a>
+                    <!-- <h6>{{products_list[0][0]}}</h6> -->
+                </div>
+                
+                <div class="tablecell">
+                    <h6>{{products_list[0][1]}}</h6>
+                </div>
+                
+                <div class="tablecell">
+                    <h6>${{products_list[0][2]}}</h6>
+                </div>
+            
+            </div>
+            
+            <div class="tablerow">
+                <div class="tablecell">
+                    <a href="{{products_list[1][3]}}">
+                        <h6>${{ products_list[1][0] }}</h6>
+                    </a>
+                    <!-- <h6>{{products_list[1][0]}}</h6> -->
+                </div>
+                
+                <div class="tablecell">
+                    <h6>{{products_list[1][1]}}</h6>
+                </div>
+                
+                <div class="tablecell">
+                    <h6>${{products_list[1][2]}}</h6>
+                </div>
+            
+            </div>
+            
+            <div class="tablerow">
+                <div class="tablecell">
+                    <a href="{{products_list[2][3]}}">
+                        <h6>${{ products_list[2][0] }}</h6>
+                    </a>
+                    <!-- <h6>{{products_list[2][0]}}</h6> -->
+                </div>
+                
+                <div class="tablecell">
+                    <h6>{{products_list[2][1]}}</h6>
+                </div>
+                
+                <div class="tablecell">
+                    <h6>${{products_list[2][2]}}</h6>
+                </div>
+            </div>
+                
+                <div class="tablerow">
+                <div class="tablecell">
+                    <a href="{{products_list[3][3]}}">
+                        <h6>${{ products_list[3][0] }}</h6>
+                    </a>
+                    <!-- <h6>{{products_list[3][0]}}</h6> -->
+                </div>
+                
+                <div class="tablecell">
+                    <h6>{{products_list[3][1]}}</h6>
+                </div>
+                
+                <div class="tablecell">
+                    <h6>${{products_list[3][2]}}</h6>
+                </div>
+            
+            </div>
+                
+                <div class="tablerow">
+                <div class="tablecell">
+                    <a href="{{products_list[4][3]}}">
+                        <h6>${{ products_list[4][0] }}</h6>
+                    </a>
+                    <!-- <h6>{{products_list[4][0]}}</h6> -->
+                </div>
+                
+                <div class="tablecell">
+                    <h6>{{products_list[4][1]}}</h6>
+                </div>
+                
+                <div class="tablecell">
+                    <h6>${{products_list[4][2]}}</h6>
+                </div>
+            
+            </div>
+
+    </div>
+
+    <!----------------------- Top 5 Table ----------------------->
+
+
+    <!----------------------- ChatBot ----------------------->
+   
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Darazbot</h2>
+            <p>Ask me anything about the products!</p>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!----------------------- ChatBot ----------------------->
+
+    
+<!----------------------- Footer ----------------------->
+
+ <div class="footer">
+        
+        <img src="../static/daraz2.png" alt="daraz logo">
+        
+        <div class="container">
+            <div class="footer-row">
+                
+                
+                <div class="footer-column">
+                    <h4>Daraz</h4>
+                    <ul>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Our services</a></li>
+                        <li><a href="">Privacy policy</a></li>
+                        <li><a href="">Affiliations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Email</a></li>
+                        <li><a href="">FaceBook</a></li>
+                        <li><a href="">Instagram</a></li>
+                        <li><a href="">Twitter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li><a href="">Islamabad</a></li>
+                        <li><a href="">Lahore</a></li>
+                        <li><a href="">Karachi</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>    
+    </div>
+
+<!----------------------- Footer ----------------------->
+
+</div>
+
+<!----------------------- ChatBot Response ----------------------->
+
+<script>
+    function sendMessage() {
+        var userMessage = document.getElementById("user-input").value;
+        // Send user message to the server
+        fetch('/process', {
+            method: 'POST',
+            body: new URLSearchParams({'user_message': userMessage}),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display bot response
+            var botResponse = data.bot_response;
+            var messageForm = document.getElementById("chat-body");
+            var newMessage = document.createElement("p");
+            newMessage.innerHTML = `<strong>You:</strong> ${userMessage}<br><strong>Bot:</strong> ${botResponse}`;
+            messageForm.appendChild(newMessage);
+            // Clear the input field
+            document.getElementById("user-input").value = "";
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
+<!----------------------- ChatBot Response ----------------------->
+
+
+</body>
+</html>
